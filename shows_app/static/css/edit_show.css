@@ -1,0 +1,50 @@
+#wrapper {
+	margin: auto;
+	width: 800px;	
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+}
+
+#go_back {
+	float: right;
+	font-size: 22px;
+	color: blue;
+
+}
+
+.network_date {
+	display: inline-block;
+	width: 190px;
+}
+
+#network {
+	height: 23.96px;
+
+}
+
+#calendar {
+	font-size: 18px;
+
+}
+
+#date {
+	margin-left: 25px;
+	height: 23.96
+
+}
+
+#title {
+	width: 400px;
+	height: 25px;
+}
+
+#button{
+	font-size: 16px;
+	box-shadow:  3px 5px;
+	margin-left: 175px;
+}
+#bio_link{
+	margin-left: 175px;
+	font-size: 22px;
+	color: blue;
+}
+

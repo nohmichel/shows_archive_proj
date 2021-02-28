@@ -1,0 +1,25 @@
+body{
+	padding: 50px;
+}
+
+#wrapper{
+	width: 600px;
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+}
+
+#go_back{
+	float: right;
+}
+
+#bio{
+	font-size: 22px;
+}
+
+#updated{
+	font-size: 22px;
+}
+
+#go_back{
+	font-size: 22px;
+	color: blue;
+}

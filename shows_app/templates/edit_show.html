@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Update</title>
+	{% load static %}
+      <link rel="stylesheet" href="{% static 'css/edit_show.css' %}"> 
+</head>
+<body>
+	<div id="wrapper">
+		<a href="{% url 'show_list' %}" id="go_back">Go Back</a>
+		<form action="/shows/create" method="POST">
+		{% csrf_token %}
+		<h1>Edit Show {{one_show.id}}</h1>
+		<label for="title">Title</label>
+		<p><input type="text" id="title" name="title" value="{{one_show.title}}"></p>
+		<div class="network_date">
+			<label for="network" class="network_date">Network</label>
+			<input type="text" id="network" class="network_date" name="network" value="{{one_show.network}}">
+		</div>
+		<div id="date" class="network_date">	
+			<label for="date" name="release_date">Release Date</label>
+			<input type="date" id="calendar" class="network_date" name="release_date" value="{{one_show.release_date | date:'Y-m-d'}}">
+		</div>
+		<p><label for="desc">Description</label></p>
+		<p><textarea type="textarea" name="description" rows="10" cols="50">{{one_show.description}}</textarea></p>
+		<p><input type="submit" value="Update" id="button" name="button"></p>
+		</form>
+		<a href="{% url 'show_bio' one_show.id %}" id="bio_link">Go Back</a>
+		</div>
+		
+	</div>
+</body>
+</html>

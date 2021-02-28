@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Read (All)</title>
+	{% load static %}
+      <link rel="stylesheet" href="{% static 'css/table_style.css' %}"> 
+</head>
+<body>
+	<div id=wrapper>
+		<h1> All Shows</h1>
+		<div id="shows_table">
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Title</th>
+						<th>Network</th>
+						<th>Release Date</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for one_show in all_shows %}
+					<tr>
+						<td id="show_id"><a href="{% url 'show_bio' show_id=one_show.id %}">{{one_show.id}}</td>			
+						<td>{{one_show.title}}</td>
+						<td>{{one_show.network}}</td>
+						<td>{{one_show.release_date}}</td>
+						<td><a href="{% url 'show_bio' show_id=one_show.id %}">Show</a> |  <a href="{% url 'edit_show' show_id=one_show.id %}"> Edit</a> | <a href="{% url 'delete_show' show_id=one_show.id %}"> Delete</a></td>
+						{% endfor %}
+					</tr>	
+				</tbody>
+			</table>
+		</div>
+		<p><a href="{% url 'new_show' %}" id="add_show">Add a New Show</a></p>
+
+	</div>	
+</body>
+</html>
